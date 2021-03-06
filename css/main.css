@@ -7,34 +7,33 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
-main {
-  display: ;
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 100px 550px 100px;
+  gap: 5px 5px;
+  grid-template-areas:
+    "Header Header Header Header"
+    "aside main main main"
+    "aside footer footer footer";
 }
 
 header {
-  text-align: center;
-  background: lightgrey;
-}
-
-h1 {
-  color: rgb(116, 201, 130);
-  font-size: 10vw;
+  grid-area: Header;
+  background-color: green;
 }
 
 aside {
-  display: grid;
-  grid-template-rows: auto;
-}
-.div-left {
-  background-color: lightgrey;
-  display: flex;
+  grid-area: aside;
+  background: blue;
 }
 
-button {
-  border: 5px solid rgb(116, 201, 130);
-  padding: 2vmin;
-  border-radius: 3vmin;
-  background-color: lightgreen;
-  outline: 0;
-  color: white;
+footer {
+  grid-area: footer;
+  background: pink;
+}
+
+main {
+  grid-area: main;
+  background: grey;
 }

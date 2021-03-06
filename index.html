@@ -11,25 +11,28 @@
   <title>Guess The Word</title>
 </head>
 <body>
-  <header>
-    <h1>Guess The Word</h1>
-    <h2>Theme Here</h2>
-  </header>
-  <aside>
-    <div class="div-left">
+  <div class="container">
+    <header>
+      <h1>Guess The Word</h1>
+      <p>Theme Here</p>
+    </header>
+    
+    <aside>
       <div>Guesses Remaining:</div>
       <div id="num-remain">10</div>
-    </div>
-    <div class="div-left">
       <div>Wrong Letters:</div>
       <div id="wrong-letters">S, T, E, L</div>
-    <div id="btn-reset">
-      <button id="reset">Reset</button>
-    </div>
-  </aside>
-  <main>
-    <div id="board"></div>
-    <div id="msg"></div>
-  </main>
+    </aside>
+  
+    <footer>
+        <button id="reset">Reset</button>
+    </footer>
+    
+    <main>
+      <div id="board"></div>
+      <div id="guess-msg"></div>
+    </main>
+  
+  </div>
 </body>
 </html>
