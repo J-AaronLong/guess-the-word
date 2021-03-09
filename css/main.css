@@ -10,7 +10,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100px 550px 100px;
+  grid-template-rows: 100px 490px 100px;
   gap: 5px 5px;
   grid-template-areas:
     "Header Header Header Header"
@@ -21,6 +21,7 @@ body {
 header {
   grid-area: Header;
   background-color: green;
+  border-radius: 5px;
 }
 
 aside {
@@ -36,4 +37,48 @@ footer {
 main {
   grid-area: main;
   background: grey;
+}
+
+h1 {
+  font-size: 3vw;
+}
+
+h1,
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+aside > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.left-text {
+  padding: 3vmin;
+}
+
+#guess-remain {
+  font-size: 10vmin;
+  background: lightsteelblue;
+}
+
+#wrong-letters {
+  font-size: 5vw;
+  background: lightsteelblue;
+}
+
+main > div {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  color: white;
+  padding-top: 5vh;
+}
+
+#guess-msg {
 }
