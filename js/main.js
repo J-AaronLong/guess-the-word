@@ -1,5 +1,5 @@
 /*----- constants -----*/
-const MAX_GUESSES = 10;
+const MAX_GUESSES = 8;
 const WORDS = [
   "ONE",
   "TWO",
@@ -13,17 +13,19 @@ const WORDS = [
   "TEST TEST",
 ];
 /*----- app's state (variables) -----*/
-let hiddenWord, guesses, wrongLetters;
+let hiddenWord, guess, wrongLets;
 
 /*----- cached element references -----*/
 const replayBtn = document.getElementById("reset");
 const msgEl = document.getElementById("guess-msg");
-const gameWord = document.getElementById("board");
+const guessEl = document.getElementById("guess");
+const guessRemainEl = document.getElementById("guess-remain");
+const wrongLetsEl = document.getElementById("wrong-letters");
 
 /*----- event listeners -----*/
 replayBtn.addEventListener("click", init);
 
-// gameWord.addEventListenever("onkeypress", keyLog);
+document.addEventListener("keypress", handleLetGuess);
 
 /*----- functions -----*/
 
@@ -32,44 +34,48 @@ init();
 function init() {
   // Random word from array. Need to look into not repeating random words.
   hiddenWord = WORDS[Math.floor(Math.random() * WORDS.length)];
-  console.log(hiddenWord);
-
-  let board = [];
-  for (let i = 0; i < hiddenWord.length; i++) {
-    board[i] = "_";
+  // for of loop here instead:
+  guess = "";
+  for (let char of hiddenWord) {
+    guess += char === " " ? " " : "_";
   }
+  console.log(hiddenWord, guess);
 
-  let extraLetters = hiddenWord.length;
-
-  guesses = MAX_GUESSES;
-
-  wrongLetters = [];
+  wrongLets = [];
 
   render();
 }
 
 function render() {
-  console.log("Render");
+  guessEl.textContent = guess;
+  guessRemainEl.textContent = MAX_GUESSES - wrongLets.length;
+  wrongLetsEl.innerHTML = wrongLets.join("<br>");
+  // console.log("Render");
 }
 
-// function keyLog() {
-//   console.log("keyLog", gameWord);
-// }
+function handleLetGuess(evt) {
+  const letter = evt.key.toUpperCase();
+  if (
+    letter.charCodeAt() < 65 ||
+    letter.charCodeAt() > 90 ||
+    isGameOver() ||
+    guess.includes(letter) ||
+    wrongLets.includes(letter)
+  )
+    return;
+  if (hiddenWord.includes(letter)) {
+    let newGuess = "";
+    for (let i = 0; i < hiddenWord.length; i++) {
+      newGuess += hiddenWord[i] === letter ? letter : guess[i];
+    }
+    guess = newGuess;
+  } else {
+    wrongLets.push(letter);
+  }
 
-// Notes as I go:
-// Looking into differences between onkeypress, keydown, keyup and trying to figure out ways to render them to my "board", I came to the conclusion that this might not be a very responsive way to build the game as a tablet user wouldn't be able to play. So I may need to rethink how to approach the letter inputs. Look into options to bring up mobile or tablet keyboard?
+  render();
+}
 
-// practice below to pick random word and not repeat it. Need to debug it.
-// let b = [];
-// const randomValueFromArray = function (myArray) {
-//   if (b.length === 0) {
-//     for (var i = 0; i < myArray.length; i++) b.push(i);
-//   }
-//   let randomIdx = Math.floor(Math.random() * b.length);
-//   let indexOfItem = b[randomIdx];
-//   b.splice(randomIdx, 1);
-//   return myArray[indexOfItem];
-// };
-
-// randomValueFromArray(["a", "b", "c", "e", "f"]);
-// console.log(randomValueFromArray);
+function isGameOver() {
+  return wrongLets.length === MAX_GUESSES || hiddenWord === guess;
+}
