@@ -1,16 +1,56 @@
 /*----- constants -----*/
 const MAX_GUESSES = 8;
 const WORDS = [
-  "ONE",
-  "TWO",
-  "THREE",
-  "FOUR",
-  "FIVE",
-  "SIX",
-  "SEVEN",
-  "EIGHT",
-  "NINE",
-  "TEST TEST",
+  "MONTGOMERY",
+  "JUNEAU",
+  "PHOENIX",
+  "LITTLE ROCK",
+  "SACRAMENTO",
+  "DENVER",
+  "HARTFORD",
+  "DOVER",
+  "TALLAHASSEE",
+  "ATLANTA",
+  "HONOLULU",
+  "BOISE",
+  "SPRINGFIELD",
+  "INDIANAPOLIS",
+  "DES MOINES",
+  "TOPEKA",
+  "FRANKFORT",
+  "BATON ROUGE",
+  "AUGUSTA",
+  "ANNAPOLIS",
+  "BOSTON",
+  "LANSING",
+  "ST PAUL",
+  "JACKSON",
+  "JEFFERSON CITY",
+  "HELENA",
+  "LINCOLN",
+  "CARSON CITY",
+  "CONCORD",
+  "TRENTON",
+  "SANTA FE",
+  "ALBANY",
+  "RALEIGH",
+  "BISMARCK",
+  "COLUMBUS",
+  "OKLAHOMA CITY",
+  "SALEM",
+  "HARRISBURG",
+  "PROVIDENCE",
+  "COLUMBIA",
+  "PIERRE",
+  "NASHVILLE",
+  "AUSTIN",
+  "SALT LAKE CITY",
+  "MONTPELIER",
+  "RICHMOND",
+  "OLYMPIA",
+  "CHARLESTON",
+  "MADISON",
+  "CHEYENNE",
 ];
 /*----- app's state (variables) -----*/
 let hiddenWord, guess, wrongLets;
@@ -39,7 +79,6 @@ function init() {
   for (let char of hiddenWord) {
     guess += char === " " ? " " : "_";
   }
-  console.log(hiddenWord, guess);
 
   wrongLets = [];
 
@@ -50,9 +89,8 @@ function render() {
   guessEl.textContent = guess;
   guessRemainEl.textContent = MAX_GUESSES - wrongLets.length;
   wrongLetsEl.innerHTML = wrongLets.join("<br>");
-  // console.log("Render");
 }
-
+// Evt handler for keys used in game
 function handleLetGuess(evt) {
   const letter = evt.key.toUpperCase();
   if (
@@ -72,10 +110,15 @@ function handleLetGuess(evt) {
   } else {
     wrongLets.push(letter);
   }
+  if (isGameOver() === true) {
+    msgEl.innerText = "Game Over";
+  } else {
+    msgEl.innerText = "";
+  }
 
   render();
 }
-
+// Two options for end game
 function isGameOver() {
   return wrongLets.length === MAX_GUESSES || hiddenWord === guess;
 }

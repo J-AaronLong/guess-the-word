@@ -10,7 +10,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 100px 490px 100px;
+  grid-template-rows: 115px 490px 135px;
   gap: 5px 5px;
   grid-template-areas:
     "Header Header Header Header"
@@ -78,7 +78,21 @@ main > div {
   justify-content: center;
   color: white;
   padding-top: 5vh;
+  align-content: flex-end;
+  font-size: 5vw;
 }
 
 #guess-msg {
+  display: flex;
+  flex-grow: 1;
+  color: ;
+  font-weight: bold;
+  font-size: 5vw;
+}
+
+#guess {
+  color: yellow;
+  font-weight: bold;
+  letter-spacing: 1vw;
+  font-size: 6vw;
 }
