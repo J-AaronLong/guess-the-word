@@ -53,6 +53,16 @@
 6.) Handle a player clicking any other elements, such as a reset button or any other clickable elements added to the game, which will result in returning back to init() function: step 4.1 - 4.4.
 ```
 ***
+
+### **Installation**
+#### No requirements. Just click the link to play!
+
+### **Getting Started**
+#### You can play by clicking the link here or at the top.
+[Click Me to Play!](https://j-aaronlong.github.io/guess-the-word/)
+
+***
+
 ### **Icebox Items:**
 
 * Words related to a certain theme can be changed to a different ***theme*** of the players choosing.

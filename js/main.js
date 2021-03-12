@@ -72,9 +72,7 @@ document.addEventListener("keypress", handleLetGuess);
 init();
 
 function init() {
-  // Random word from array. Need to look into not repeating random words.
   hiddenWord = WORDS[Math.floor(Math.random() * WORDS.length)];
-  // for of loop here instead:
   guess = "";
   for (let char of hiddenWord) {
     guess += char === " " ? " " : "_";
@@ -120,7 +118,7 @@ function handleLetGuess(evt) {
 
   render();
 }
-// Two options for end game
+
 function isGameOver() {
   return wrongLets.length === MAX_GUESSES || hiddenWord === guess;
 }
