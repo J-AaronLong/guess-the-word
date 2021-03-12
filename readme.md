@@ -1,20 +1,20 @@
 # **Project 1**
 ## **Guess The Word**
 
-### By Aaron Long
+### Aaron Long | [Github](https://github.com/J-AaronLong/guess-the-word) | [Game Link](https://j-aaronlong.github.io/guess-the-word/)
 ***
 
 ### **Objective**
 
-#### Build a Guess The Word game which will incorporate the following technologies:
+#### The game: Guess The Word game which incorporates the following technologies:
 * HTML
 * CSS
 * JavaScript
 
-#### Depending on the theme of the game, words may need to include multiple words with a space between. When a correct letter is pressed on keyboard, the game will show the letter in correct location of hidden word. When an incorrect letter is pressed, that letter will show up on the page in area with incorrect letters, resulting in guess count decrementing by one from 10 each incorrect guess. A win will result in player guessing before that count gets to 0, displaying win message and a game reset by pressing button. A new word will randomly be chosen from the themed words and rendered to the page. If the player doesn't guess the correct word, a message is rendered and  the game resets by pressing reset button.
+#### This is Guess the Word. The theme is **U.S Capital cities**. You begin by pressing a key on your keyboard to initiate the game. When a correct letter is pressed on the keyboard, the game will show the letter in the correct location of the hidden word. When an incorrect letter is pressed, that letter will show up on the side of the browser. This also results in the guess count decrementing by one from 8 with each incorrect guess. A win will result in player guessing before that count gets to 0. The game may also be reset by pressing the reset button. A new word will randomly be chosen from the themed words and rendered to the page. If the player doesn't guess the correct word, a game over message is rendered.
 ***
-![My Wireframe](https://i.imgur.com/JbGdF8o.jpg)
-##### My wireframe of "Guess the Word" (It looked better in my head.)
+![Guess The Word image](https://i.imgur.com/tSqilqO.png)
+##### Image of "Guess the Word"
 ***
 
 ### **Pseudocode:**
@@ -53,10 +53,6 @@
 ```
 ***
 ### **Icebox Items:**
-
-* Create a ***score keeper*** that will display the amount of wins a player has.
-
-* Create another one for ***loss*** count.
 
 * Words related to a certain theme can be changed to a different ***theme*** of the players choosing.
 

@@ -79,7 +79,7 @@ function init() {
   for (let char of hiddenWord) {
     guess += char === " " ? " " : "_";
   }
-
+  console.log(hiddenWord);
   wrongLets = [];
 
   render();
@@ -90,7 +90,7 @@ function render() {
   guessRemainEl.textContent = MAX_GUESSES - wrongLets.length;
   wrongLetsEl.innerHTML = wrongLets.join("<br>");
 }
-// Evt handler for keys used in game
+
 function handleLetGuess(evt) {
   const letter = evt.key.toUpperCase();
   if (
