@@ -89,6 +89,13 @@ function render() {
   guessEl.textContent = guess;
   guessRemainEl.textContent = MAX_GUESSES - wrongLets.length;
   wrongLetsEl.innerHTML = wrongLets.join("<br>");
+  if (hiddenWord === guess) {
+    msgEl.textContent = "Congrats! You know your Capitals.";
+  } else if (MAX_GUESSES === 8) {
+    msgEl.textContent = "Game Over";
+  } else {
+    msgEl.textContent = "";
+  }
 }
 
 function handleLetGuess(evt) {
@@ -110,11 +117,11 @@ function handleLetGuess(evt) {
   } else {
     wrongLets.push(letter);
   }
-  if (isGameOver() === true) {
-    msgEl.innerText = "Game Over";
-  } else {
-    msgEl.innerText = "";
-  }
+  // if (isGameOver() === true) {
+  //   msgEl.innerText = "Game Over";
+  // } else {
+  //   msgEl.innerText = "";
+  // }
 
   render();
 }

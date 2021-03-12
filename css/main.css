@@ -39,7 +39,7 @@ footer {
 
 main {
   grid-area: main;
-  background: grey;
+  background: lightgray;
 }
 
 #instruct {
@@ -75,7 +75,7 @@ aside > div {
 }
 
 #wrong-letters {
-  font-size: 5vw;
+  font-size: 3vw;
   background: lightsteelblue;
 }
 
@@ -108,7 +108,7 @@ button {
   outline: none;
   width: 25vw;
   height: 8vh;
-  border-radius: 5px;
+  border-radius: 20px;
   color: grey;
   background: white;
   font-size: 3vmin;
@@ -119,4 +119,26 @@ button:hover {
   background: grey;
   border: grey;
   transition: 1000ms;
+}
+
+@media screen and (max-width: 500px) {
+  #wrong-letters {
+    font-size: 7vw;
+  }
+  h1 {
+    font-size: 7vw;
+  }
+  main > div {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #guess-msg {
+    font-size: 3vw;
+  }
+  #theme,
+  #instruct {
+    font-size: 4vw;
+  }
 }
