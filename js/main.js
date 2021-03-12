@@ -91,7 +91,7 @@ function render() {
   wrongLetsEl.innerHTML = wrongLets.join("<br>");
   if (hiddenWord === guess) {
     msgEl.textContent = "Congrats! You know your Capitals.";
-  } else if (MAX_GUESSES === 8) {
+  } else if (isGameOver() === true) {
     msgEl.textContent = "Game Over";
   } else {
     msgEl.textContent = "";
@@ -117,11 +117,6 @@ function handleLetGuess(evt) {
   } else {
     wrongLets.push(letter);
   }
-  // if (isGameOver() === true) {
-  //   msgEl.innerText = "Game Over";
-  // } else {
-  //   msgEl.innerText = "";
-  // }
 
   render();
 }

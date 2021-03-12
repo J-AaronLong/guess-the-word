@@ -14,6 +14,7 @@
 #### This is Guess the Word. The theme is **U.S Capital cities**. You begin by pressing a key on your keyboard to initiate the game. When a correct letter is pressed on the keyboard, the game will show the letter in the correct location of the hidden word. When an incorrect letter is pressed, that letter will show up on the side of the browser. This also results in the guess count decrementing by one from 8 with each incorrect guess. A win will result in player guessing before that count gets to 0. The game may also be reset by pressing the reset button. A new word will randomly be chosen from the themed words and rendered to the page. If the player doesn't guess the correct word, a game over message is rendered.
 ***
 ![Guess The Word image](https://i.imgur.com/kyrDW3r.png)
+![In Play](https://i.imgur.com/xsqo8CA.png)
 ##### Image of "Guess the Word"
 ***
 
